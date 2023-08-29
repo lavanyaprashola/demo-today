@@ -16,6 +16,6 @@ jobs:
         run: echo Hello, world!
       - name: replacing sed command 
         run: |
-            $sed 's/lavanya/phone /g' lavanya.txt
+             sed 's/mango/phone /g' lavanya.txt
            
 
