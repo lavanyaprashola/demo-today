@@ -26,7 +26,7 @@ jobs:
             sed -i 's/mango/dev/g' lavanya.txt
           fi
   
-        -nam e: Conditional replacement based on branch
+      - name: Conditional replacement based on branch
         run: |
                cat lavanya.txt
 
