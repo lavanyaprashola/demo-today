@@ -1,1 +1,4 @@
 APPle= mango+orange
+mango/akeed/site
+mango/akked/siteHost
+mango/akeed/lavana
