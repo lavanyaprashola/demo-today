@@ -1,21 +1,30 @@
-
 name: CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
+      - develop  # Add more branches as needed
   pull_request:
     branches: [ "main" ]
+
 jobs:
- 
   build:
-    runs-on: ubuntu-latest  
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
+
       - name: Run a one-line script
         run: echo Hello, world!
-      - name: replacing sed command 
+
+      - name: Conditional replacement based on branch
         run: |
-             sed 's/mango/phone /g' lavanya.txt
+          BRANCH=${{ github.ref }}
+          if [[ "$BRANCH" == "refs/heads/main" ]]; then
+            sed -i 's/mango/prod/g' lavanya.txt
+          elif [[ "$BRANCH" == "refs/heads/develop" ]]; then
+            sed -i 's/mango/dev/g' lavanya.txt
+          fi
+
            
 
