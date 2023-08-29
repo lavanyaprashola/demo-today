@@ -25,6 +25,8 @@ jobs:
           elif [[ "$BRANCH" == "refs/heads/develop" ]]; then
             sed -i 's/mango/dev/g' lavanya.txt
           fi
-
-           
+  
+        -nam e: Conditional replacement based on branch
+        run: |
+               cat lavanya.txt
 
